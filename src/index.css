@@ -1,0 +1,127 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Burgundy/Wine Red Theme - Light Mode Only */
+    --background: 30 25% 97%;
+    --foreground: 0 10% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 10% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 10% 15%;
+
+    /* Primary Burgundy */
+    --primary: 350 65% 35%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary - Light Gray */
+    --secondary: 30 20% 94%;
+    --secondary-foreground: 0 10% 20%;
+
+    /* Muted Colors */
+    --muted: 30 15% 92%;
+    --muted-foreground: 0 5% 45%;
+
+    /* Accent - Soft Burgundy */
+    --accent: 350 50% 95%;
+    --accent-foreground: 350 65% 30%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 30 15% 88%;
+    --input: 30 15% 88%;
+    --ring: 350 65% 35%;
+
+    --radius: 0.75rem;
+
+    /* Custom Colors */
+    --burgundy: 350 65% 35%;
+    --burgundy-dark: 350 70% 28%;
+    --burgundy-light: 350 50% 92%;
+    --charcoal: 0 10% 20%;
+    --gray-text: 0 5% 45%;
+    --off-white: 30 25% 97%;
+    --cream: 35 30% 95%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    direction: rtl;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-cairo antialiased;
+    font-feature-settings: 'ss01' on, 'ss02' on;
+  }
+}
+
+@layer components {
+  .tab-active {
+    @apply bg-primary text-primary-foreground shadow-md;
+  }
+
+  .tab-inactive {
+    @apply bg-card text-muted-foreground hover:bg-accent hover:text-accent-foreground transition-colors;
+  }
+
+  .section-card {
+    @apply bg-card rounded-2xl p-6 md:p-8 shadow-sm border border-border/50;
+  }
+
+  .comparison-card {
+    @apply rounded-xl p-5 transition-all duration-300;
+  }
+
+  .comparison-before {
+    @apply bg-muted border-r-4 border-muted-foreground/30;
+  }
+
+  .comparison-after {
+    @apply bg-burgundy-light border-r-4 border-primary;
+  }
+
+  .cta-button {
+    @apply bg-primary text-primary-foreground font-bold py-4 px-8 rounded-xl 
+           shadow-lg hover:shadow-xl transition-all duration-300
+           hover:bg-burgundy-dark active:scale-[0.98];
+  }
+
+  .footer-section {
+    @apply bg-charcoal text-white/90;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .bg-burgundy-light {
+    background-color: hsl(var(--burgundy-light));
+  }
+
+  .border-primary {
+    border-color: hsl(var(--primary));
+  }
+
+  .bg-charcoal {
+    background-color: hsl(var(--charcoal));
+  }
+
+  .text-burgundy {
+    color: hsl(var(--burgundy));
+  }
+
+  .bg-cream {
+    background-color: hsl(var(--cream));
+  }
+}
