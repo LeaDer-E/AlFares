@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Menu, X, Users, HandHelping, GitCompare, FileText, CalendarCheck } from "lucide-react";
+import { Menu, X, Users, HandHelping, GitCompare, CalendarCheck, Sparkles } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const navItems = [
   { id: "about", label: "من نحن", icon: Users },
   { id: "help", label: "نساعدك في", icon: HandHelping },
   { id: "compare", label: "قبل / بعد", icon: GitCompare },
-  { id: "register", label: "سجّل بياناتك", icon: FileText },
+  { id: "register", label: "سجّل بياناتك", icon: Sparkles, cta: true },
   { id: "after", label: "ما بعد المعرض", icon: CalendarCheck },
 ];
 
@@ -45,11 +45,13 @@ const Header = ({ activeTab, onTabChange }: HeaderProps) => {
                 <button
                   key={item.id}
                   onClick={() => handleNavClick(item.id)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-medium text-sm transition-all duration-200 ${
-                    isActive 
-                      ? "bg-primary text-primary-foreground" 
+                  className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-bold text-sm transition-all duration-200 ${
+                  item.cta
+                    ? "bg-blue-800 text-white hover:bg-blue-500 shadow-lg hover:scale-[1.03]"
+                    : isActive
+                      ? "bg-primary text-primary-foreground"
                       : "text-muted-foreground hover:bg-secondary hover:text-foreground"
-                  }`}
+                }`}
                 >
                   <Icon className="w-4 h-4" />
                   <span>{item.label}</span>
@@ -79,10 +81,12 @@ const Header = ({ activeTab, onTabChange }: HeaderProps) => {
                   <button
                     key={item.id}
                     onClick={() => handleNavClick(item.id)}
-                    className={`flex items-center gap-3 px-4 py-3 rounded-xl font-medium text-sm transition-all duration-200 ${
-                      isActive 
-                        ? "bg-primary text-primary-foreground" 
-                        : "text-muted-foreground hover:bg-secondary hover:text-foreground"
+                    className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition-all duration-200 ${
+                      item.cta
+                        ? "bg-blue-800 text-white shadow-lg hover:bg-blue-500"
+                        : isActive
+                          ? "bg-primary text-primary-foreground"
+                          : "text-muted-foreground hover:bg-secondary hover:text-foreground"
                     }`}
                   >
                     <Icon className="w-5 h-5" />

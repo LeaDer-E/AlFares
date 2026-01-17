@@ -2,8 +2,8 @@ import {
   Users, 
   HandHelping, 
   GitCompare, 
-  FileText, 
-  CalendarCheck 
+  CalendarCheck,
+  Sparkles  
 } from "lucide-react";
 import TabAboutUs from "./tabs/TabAboutUs";
 import TabWeHelpYou from "./tabs/TabWeHelpYou";
@@ -15,7 +15,7 @@ const tabs = [
   { id: "about", label: "من نحن", icon: Users },
   { id: "help", label: "نساعدك في", icon: HandHelping },
   { id: "compare", label: "قبل / بعد", icon: GitCompare },
-  { id: "register", label: "سجّل بياناتك", icon: FileText },
+  { id: "register", label: "سجّل بياناتك", icon: Sparkles, cta: true },
   { id: "after", label: "ما بعد المعرض", icon: CalendarCheck },
 ];
 
@@ -54,10 +54,12 @@ const SmartTabs = ({ activeTab, onTabChange }: SmartTabsProps) => {
             <button
               key={tab.id}
               onClick={() => onTabChange(tab.id)}
-              className={`flex items-center gap-2 px-5 py-3.5 rounded-xl font-semibold text-sm whitespace-nowrap transition-all duration-300 flex-shrink-0 border-2 ${
-                isActive 
-                  ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20" 
-                  : "bg-card text-muted-foreground border-border/50 hover:bg-accent hover:text-accent-foreground hover:border-primary/30"
+              className={`flex items-center gap-2 px-5 py-3.5 rounded-xl font-bold text-sm whitespace-nowrap transition-all duration-300 flex-shrink-0 border-2 ${
+                tab.cta
+                  ? "bg-blue-600 text-white border-blue-600 shadow-lg shadow-blue-600/30 hover:bg-blue-700 hover:scale-[1.03]"
+                  : isActive
+                    ? "bg-primary text-primary-foreground border-primary shadow-lg shadow-primary/20"
+                    : "bg-card text-muted-foreground border-border/50 hover:bg-accent hover:text-accent-foreground hover:border-primary/30"
               }`}
             >
               <Icon className="w-4 h-4" />

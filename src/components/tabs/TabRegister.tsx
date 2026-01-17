@@ -1,7 +1,7 @@
 import { ExternalLink, Clock, Shield, Zap } from "lucide-react";
 
 const TabRegister = () => {
-  const googleFormUrl = "#"; // Replace with actual Google Form URL
+  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdZXZ_NaKoGNIckAXoC8ASz_3ZHR3bZBSZQk_IFejGy26H4wg/viewform?usp=publish-editor"; // Replace with actual Google Form URL
 
   return (
     <div className="section-card space-y-8">
@@ -30,7 +30,7 @@ const TabRegister = () => {
         </p>
 
         <a
-          href={"https://www.google.com/"}
+          href={googleFormUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="inline-flex items-center gap-3 bg-gradient-to-l from-primary to-primary/90 text-primary-foreground font-bold py-5 px-10 rounded-2xl shadow-xl shadow-primary/30 hover:shadow-2xl hover:shadow-primary/40 transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] text-lg"
