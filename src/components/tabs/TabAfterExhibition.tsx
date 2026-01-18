@@ -82,7 +82,7 @@ const TabAfterExhibition = () => {
           <div className="space-y-2">
             <p className="font-bold text-foreground text-xl">شكرًا لتسجيلك!</p>
             <p className="text-muted-foreground leading-relaxed">
-              تم استلام بياناتك بنجاح وسيتم التواصل معك بعد المعرض بتوجيه مهني مناسب لحالتك.
+              بعد إستلام البيانات بنجاح سيتم التواصل معك بعد المعرض بتوجيه مهني مناسب لحالتك.
             </p>
           </div>
         </div>

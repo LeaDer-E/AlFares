@@ -1,8 +1,9 @@
 import { ExternalLink, Clock, Shield, Zap } from "lucide-react";
 
-const TabRegister = () => {
-  const googleFormUrl = "https://docs.google.com/forms/d/e/1FAIpQLSdZXZ_NaKoGNIckAXoC8ASz_3ZHR3bZBSZQk_IFejGy26H4wg/viewform?usp=publish-editor"; // Replace with actual Google Form URL
+export const googleFormUrl = "https://forms.gle/omtSHC7F217okadC9"; // Replace with actual Google Form URL
 
+const TabRegister = () => {
+   
   return (
     <div className="section-card space-y-8">
       <div className="space-y-3 text-center">

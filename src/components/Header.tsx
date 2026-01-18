@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Menu, X, Users, HandHelping, GitCompare, CalendarCheck, Sparkles } from "lucide-react";
+import { Menu, X, Users, HandHelping, GitCompare, CalendarCheck, Sparkles, Target } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const navItems = [
@@ -8,6 +8,7 @@ const navItems = [
   { id: "compare", label: "قبل / بعد", icon: GitCompare },
   { id: "register", label: "سجّل بياناتك", icon: Sparkles, cta: true },
   { id: "after", label: "ما بعد المعرض", icon: CalendarCheck },
+  { id: "evaluation", label: "التقييم والتوجيه المهني", icon: Target },
 ];
 
 interface HeaderProps {
@@ -47,11 +48,16 @@ const Header = ({ activeTab, onTabChange }: HeaderProps) => {
                   onClick={() => handleNavClick(item.id)}
                   className={`flex items-center gap-2 px-4 py-2.5 rounded-lg font-bold text-sm transition-all duration-200 ${
                   item.cta
-                    ? "bg-blue-800 text-white hover:bg-blue-500 shadow-lg hover:scale-[1.03]"
+                    ? "text-white shadow-lg hover:scale-[1.03]"
                     : isActive
                       ? "bg-primary text-primary-foreground"
                       : "text-muted-foreground hover:bg-secondary hover:text-foreground"
                 }`}
+                style={item.cta ? { 
+                  background: 'linear-gradient(90deg, #1e40af 0%, #2563eb 50%, #1e40af 100%)',
+                  backgroundSize: '200% 100%',
+                  animation: 'shimmer 3s ease-in-out infinite'
+                } : {}}
                 >
                   <Icon className="w-4 h-4" />
                   <span>{item.label}</span>
@@ -83,11 +89,16 @@ const Header = ({ activeTab, onTabChange }: HeaderProps) => {
                     onClick={() => handleNavClick(item.id)}
                     className={`flex items-center gap-3 px-4 py-3 rounded-xl font-bold text-sm transition-all duration-200 ${
                       item.cta
-                        ? "bg-blue-800 text-white shadow-lg hover:bg-blue-500"
+                        ? "text-white shadow-lg"
                         : isActive
                           ? "bg-primary text-primary-foreground"
                           : "text-muted-foreground hover:bg-secondary hover:text-foreground"
                     }`}
+                    style={item.cta ? { 
+                      background: 'linear-gradient(90deg, #1e40af 0%, #2563eb 50%, #1e40af 100%)',
+                      backgroundSize: '200% 100%',
+                      animation: 'shimmer 3s ease-in-out infinite'
+                    } : {}}
                   >
                     <Icon className="w-5 h-5" />
                     <span>{item.label}</span>

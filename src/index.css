@@ -125,3 +125,13 @@
     background-color: hsl(var(--cream));
   }
 }
+
+/* Shimmer Animation for CTA Buttons */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}

@@ -2,6 +2,7 @@ import { Phone, Mail, FileText, Receipt, MapPin, Shield, Sparkles } from "lucide
 import logo from "@/assets/logo.png";
 import vat from "@/assets/vat.png";
 import bc from "@/assets/bc.png";
+import { googleFormUrl } from "./tabs/TabRegister";
 
 const Footer = () => {
   return (
@@ -83,6 +84,20 @@ const Footer = () => {
                     <span className="font-bold text-foreground tracking-wider text-sm" dir="ltr">310752934300003</span>
                   </div>
                 </div>
+              </div>
+            {/* Full Width CTA Button */}
+           
+              <div className="lg:col-span-12 ">
+                <a href={googleFormUrl} target="_blank" className="lg:col-span-12">
+                <div className="w-full bg-gradient-to-r py-2 from-blue-600 via-blue-700 to-blue-800 rounded-xl text-center shadow-2xl shadow-blue-600/60 border border-blue-500/20 p-1">
+                  <p className="text-blue-100 text-base x-auto py-0.5">
+                    إستفيد من خدماتنا بالمعرض
+                  </p>
+                  <button className="bg-white text-blue-700 font-bold py-1 px-3 rounded-xl text-base hover:bg-blue-50 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                    سجّل بياناتك
+                  </button>
+                </div>
+                </a>
               </div>
             </div>
           </div>
